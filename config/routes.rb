@@ -1,5 +1,15 @@
 Rails.application.routes.draw do
-  resources :pins
+  devise_for :users
+
+  resources :pins do
+    collection do
+      get 'mypins'
+    end
+    member do
+      get 'pinsof'
+    end
+  end
+
   get 'pages/index'
 
   # The priority is based upon order of creation: first created -> highest priority.

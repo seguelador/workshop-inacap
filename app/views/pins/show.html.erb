@@ -1,14 +1,21 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Photo:</strong>
+  <strong>Nombre:</strong>
+  <%= @pin.name %>
+</p>
+<p>
+  <strong>Foto:</strong>
   <img src="<%= @pin.photo %>" alt="Foto del pin" width="200">
 </p>
 
 <p>
-  <strong>Description:</strong>
+  <strong>Descripcion:</strong>
   <%= @pin.description %>
 </p>
 
+<p>
+	<a href="<%= pinsof_pin_path(@pin.user) %>">Ver pins de usuario</a>
+</p>
 <%= link_to 'Edit', edit_pin_path(@pin) %> |
 <%= link_to 'Back', pins_path %>
